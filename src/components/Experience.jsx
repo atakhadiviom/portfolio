@@ -7,7 +7,12 @@ const experiences = [
         company: "Smartek",
         period: "Nov 2023 - Present",
         location: "Muscat",
-        description: "Leading digital marketing strategies and growth initiatives."
+        description: "Leading digital marketing strategies and growth initiatives.",
+        stats: [
+            { label: "Revenue Growth", value: "+150%" },
+            { label: "Team Size", value: "12+" },
+            { label: "Campaigns", value: "50+" }
+        ]
     },
     {
         role: "Digital Marketing Specialist",
@@ -35,120 +40,6 @@ const experiences = [
         company: "Monarch",
         period: "Mar 2023 - May 2023",
         location: "Canada",
-        description: ""
-    },
-    {
-        role: "Website Developer & Social Media Manager",
-        company: "Mazzehoio",
-        period: "Oct 2019 - Jul 2022",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "WordPress Developer",
-        company: "noavaran zibayi",
-        period: "Dec 2018 - Jul 2022",
-        location: "Mashhad",
-        link: "http://noavaranzibayi.ir/"
-    },
-    {
-        role: "Website Administrator",
-        company: "Persian Part Co",
-        period: "Aug 2017 - Jul 2022",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "CEO",
-        company: "At A course",
-        period: "Apr 2019 - Apr 2020",
-        link: "https://atacourse.com",
-        description: "Learn from YouTube with our LMS system."
-    },
-    {
-        role: "IT Consultant",
-        company: "Takwall",
-        period: "Jun 2019 - Oct 2019",
-        location: "Mashhad",
-        link: "Takwall.com",
-        description: "Vendor marketing in Mashhad."
-    },
-    {
-        role: "Website Designer",
-        company: "hamgam rayan shomal",
-        period: "Mar 2019 - Oct 2019",
-        location: "Mashhad",
-        link: "https://hamgamrayan.com/"
-    },
-    {
-        role: "WordPress Developer",
-        company: "kavizdiklen",
-        period: "Dec 2018 - Oct 2019",
-        location: "Mashhad",
-        link: "http://kavizdiklen.com/"
-    },
-    {
-        role: "CEO",
-        company: "Daher",
-        period: "Nov 2017 - Oct 2019",
-        location: "Mashhad",
-        link: "https://daher.ir",
-        description: "Freelancer framework for Iranian people."
-    },
-    {
-        role: "Website Designer",
-        company: "Be Farm",
-        period: "Sep 2018 - Jan 2019",
-        location: "Mashhad",
-        link: "http://gandomdasht.co/"
-    },
-    {
-        role: "C++ Developer",
-        company: "ARIOcoin",
-        period: "Aug 2018 - Dec 2018",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "WordPress Developer",
-        company: "fath optics",
-        period: "Aug 2018 - Sep 2018",
-        location: "Mashhad",
-        link: "http://www.fathoptics.ir"
-    },
-    {
-        role: "Website Designer",
-        company: "Open Learning Center Of STU",
-        period: "Dec 2017 - Feb 2018",
-        location: "Mashhad",
-        link: "olc.sadjad.ac.ir"
-    },
-    {
-        role: "Web Designer",
-        company: "persian part",
-        period: "Jun 2017 - Aug 2017",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "WordPress Developer",
-        company: "Parsghate",
-        period: "Jun 2017 - Jul 2017",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "WordPress Developer",
-        company: "nik store",
-        period: "May 2016 - Jun 2017",
-        location: "Mashhad",
-        description: ""
-    },
-    {
-        role: "Marketer",
-        company: "Cliven",
-        period: "Apr 2013 - May 2015",
-        location: "Mashhad",
         description: ""
     }
 ];
@@ -198,6 +89,16 @@ const Experience = ({ language, t }) => {
                                 </div>
                                 {exp.description && (
                                     <p className="text-gray-400 text-sm mb-2">{exp.description}</p>
+                                )}
+                                {exp.stats && (
+                                    <div className="grid grid-cols-3 gap-4 mt-4 mb-2">
+                                        {exp.stats.map((stat, i) => (
+                                            <div key={i} className="bg-white/5 p-2 rounded text-center border border-white/5">
+                                                <div className="text-accent font-bold text-lg">{stat.value}</div>
+                                                <div className="text-gray-400 text-xs">{stat.label}</div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 )}
                                 {exp.link && (
                                     <a
